@@ -28,19 +28,19 @@ and open the template in the editor.
     <?php
         if(isset($logged)){
             echo ("  <form action='Update.php' method='POST'>
-                    <input id='button' type='submit' Name = 'CUser' value='update'>
+                    <input id='button' type='submit' Name = 'CUser' value='Update'>
                     <input name= 'logged' type='hidden' value='$logged'>
                     </form>
-                    <form action='Delete.php'>
+                    <form action='Delete.php' method='POST'>
+                    <input id='button' type='submit' Name = 'CUser' value='Delete'>
                     <input name= 'logged' type='hidden' value='$logged'>
-                    <input id='button' type='submit' Name = 'CUser' value='delete'>
                     </form>");
         }else{
             echo '  <form action="SignUp.php"  method="POST">
                     <input id="button" type="submit" Name = "SignUp" value="SignUp">
                     </form>
                     <form action="login.php">
-                    <input id="button" type="submit" Name = "Login" value="login">
+                    <input id="button" type="submit" Name = "Login" value="Login">
                     </form> ';
         }
 

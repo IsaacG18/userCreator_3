@@ -10,9 +10,16 @@
                     . "Select * FROM usersv2 WHERE user_name =?"
                     );
             $queryU -> execute([$UN]);
-            $users = $queryU->fetch(PDO::FETCH_OBJ);
-            if(!$users){
-          echo'Username free <br>';
+            $usersU = $queryU->fetch(PDO::FETCH_OBJ);
+            
+            $queryE = $con->prepare(""
+                    . "Select * FROM usersv2 WHERE email =?"
+                    );
+            $queryE -> execute([$EM]);
+            $usersE = $queryE->fetch(PDO::FETCH_OBJ);
+            
+            if(!$usersU and !$usersE){
+          echo'Username and Email are free <br>';
            $query = $con->prepare(""
                 . "INSERT INTO usersv2(first_name, last_name, user_name,email, pass, Attemps)"
                 . " VALUES (:first_name, :last_name, :user_name, :email, :pass, 0)");
@@ -27,7 +34,10 @@
            $user_id = $con -> lastInsertId();
            echo $user_id;
             }else{
-               echo '<br>Username already taken';
+               echo '<br>Username or Email is already taken';
+               echo '<form action="SignUp.php">
+                    <input id="button" type="submit" Name = "login" value="Sign Up">
+                    </form>';
            }   
                   
 ?>
@@ -36,10 +46,4 @@
         <meta charset="UTF-8">
         <title>Account create</title>
     </head>
-    <body>
-        <form action="login.php">
-        <input id="button" type="submit" Name = "login" value="submit input">
-        </form>
-       
-    </body>
-</html>
+</html>>

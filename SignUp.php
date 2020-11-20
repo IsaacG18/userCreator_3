@@ -19,9 +19,9 @@ and open the template in the editor.
             }
             #box{
                width: 250px;
-               height: 350px;
+               height: 375px;
                border: 5px black solid;
-               background-color: rgba(255, 255, 255, 0.5);
+               background-color: rgba(255, 255, 255, 0.8);
                margin: 100px auto;
             }
             h1{
@@ -32,25 +32,36 @@ and open the template in the editor.
             input[type=text], input[type=password]{
                 margin-bottom: 20px;
                 color: black;
-                background-color: rgba(255, 255, 255, 0.5);
+                background-color: rgba(255, 255, 255, 0.7);
                 
             }
             input[type=submit]{
-                display: inline;
-                 border:0 none;
+                border:0 none;
                 cursor:pointer;
                 -webkit-border-radius: 5px;
                 border-radius: 5px; 
                 padding: 5px;
-                margin-right: 50px;
-                color:purple;
-                background-color: darkgray;
-                float: right;
-                
+                color:black;
+                background-color: #ffffff;
+                margin-left: 30px;
+                margin-top: 10px;
             }
             label{
                 margin-left: 3px;
                 color: black;
+                min-width: 75px;
+                display: inline;
+                float: left;
+                font-size: 15px;
+                font-family: sans-serif 
+            }
+            #buttonSP{
+                font-size: 20px;
+                font-family: sans-serif; 
+            }
+            input, #buttonlogin{
+                font-size: 10px;
+                font-family: sans-serif;
             }
             
         </style>
@@ -67,10 +78,10 @@ and open the template in the editor.
             <Input type = 'text' Name ='EM' id = "EM">
             <label for = "PW">Password</label>
             <Input type = 'password' Name ='PW' id = "PW">
-            <input id="button" type="submit" Name = "Submit1" value="Sign Up">
+            <input id="buttonSP" type="submit" Name = "Submit1" value="Sign Up">
         </form>
        <form action="login.php">
-        <input id="button" type="submit" Name = "login" value="Login">
+        <input id="buttonLI" type="submit" Name = "login" value="To instead Login">
         </form>
         </div>
        

@@ -1,17 +1,16 @@
 <?php
 switch ($function) {
-                    case "login":
+                    case "Login":
                         $logged = $users->user_name;
                         include_once 'index.php';
                         break;
                     
-                    case "delete":
-                        if(isset($_POST['currentUser'])){
-                        $CUser = $_POST['currentUser'];
+                    case "Delete":
+                        if(isset($_POST['RPW'])){
+                        $RPW = $_POST['RPW'];
                         }
                         
-                    if($CUser == $users->user_name){
-                        echo 'Working';
+                    if($RPW == $pass){
                     }
                         $query = $con->prepare(""
                       . "DELETE FROM usersv2"
@@ -38,7 +37,7 @@ switch ($function) {
                         }
                     
                         break;
-                    case "update":
+                    case "Update":
 
                         $newPass = $_POST['NPW'];
                          $query = $con->prepare(""
